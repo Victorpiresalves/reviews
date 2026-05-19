@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"c:\\\\Sistemas\\\\reviews\\\\memopezil\" -Recurse -Force)",
+      "Bash(Select-Object FullName)",
+      "Bash(ConvertTo-Csv -NoTypeInformation)",
+      "Bash(Out-String)",
+      "Bash(grep -o \"\\\\\"text_color_\\\\\\\\\\(\\\\\\\\|\\\\\"button_text_color\\\\\\\\|\\\\\"background_color\\\\\\\\|button_text_color_hex\" index.html)",
+      "Bash(dir \"c:\\\\Sistemas\\\\reviews\\\\memopezil\\\\assets\")",
+      "Bash(findstr \"MMP\")"
+    ]
+  }
+}
