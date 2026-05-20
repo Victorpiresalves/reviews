@@ -363,14 +363,6 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}*,:after,:before{box-sizing:
   src: url("https://fonts.gstatic.com/s/quicksand/v37/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkBgv58a-xw.ttf") format('truetype');
 }</style>
 
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "wtb4s51uce");
-</script>
 
 <!-- VTurb — Otimização de carregamento -->
 <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
@@ -382,114 +374,6 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}*,:after,:before{box-sizing:
 <link rel="dns-prefetch" href="https://images.converteai.net">
 <link rel="dns-prefetch" href="https://license.vturb.com">
 
-<!-- ═══════════════════════════════════════════════════════
-     GA4 — G-MZLDVH3J7D
-     ═══════════════════════════════════════════════════════ -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MZLDVH3J7D"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('set', { page_type: 'review', niche: 'memory_supplement', review_version: '1.0' });
-  gtag('config', 'G-MZLDVH3J7D');
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-
-  /* ── 1. URL PASS-THROUGH ─────────────────────────────────────────────── */
-  var urlParams  = new URLSearchParams(window.location.search);
-  var trackKeys  = ['gclid','fbclid','utm_source','utm_medium','utm_campaign','utm_content','utm_term','src'];
-  var extra      = {};
-  trackKeys.forEach(function (k) { if (urlParams.get(k)) extra[k] = urlParams.get(k); });
-
-  function appendParams(href) {
-    if (!Object.keys(extra).length) return href;
-    var sep = href.indexOf('?') !== -1 ? '&' : '?';
-    return href + sep + Object.entries(extra).map(function (e) {
-      return e[0] + '=' + encodeURIComponent(e[1]);
-    }).join('&');
-  }
-
-  /* ── 2. IDENTIFICAR BOTÕES, ATRIBUIR ID + CLASSE + ENRIQUECER HREF ───── */
-  var btnMap = [
-    { prefix: 'Visit Official Website',                             id: 'btn-hero'         },
-    { prefix: 'GET YOUR MEMOPEZIL TODAY',                           id: 'btn-pros-cons'    },
-    { prefix: 'CLAIM YOUR DISCOUNTED BOTTLES',                      id: 'btn-fake-warning' },
-    { prefix: 'START YOUR REVERSAL JOURNEY',                        id: 'btn-what-is'      },
-    { prefix: 'SECURE YOUR SUPPLY NOW',                             id: 'btn-how-works'    },
-    { prefix: 'JOIN 67,000+ SUCCESS STORIES',                       id: 'btn-testimonials' },
-    { prefix: 'LOCK IN EXPERT-BACKED FORMULA',                      id: 'btn-ingredients'  },
-    { prefix: 'ACTIVATE YOUR BRAIN SHIELD',                         id: 'btn-safety'       },
-    { prefix: 'VISIT THE OFFICIAL WEBSITE',                         id: 'btn-benefits'     },
-    { prefix: 'GET MY DISCOUNTED SUPPLY',                           id: 'btn-guarantee'    },
-    { prefix: 'Click Here to Buy on the Official Website',          id: 'btn-final-cta'    }
-  ];
-
-  document.querySelectorAll('a.elementor-button').forEach(function (a) {
-    var textEl = a.querySelector('.elementor-button-text');
-    if (!textEl) return;
-    var txt = textEl.textContent.trim();
-    btnMap.forEach(function (def) {
-      if (txt.indexOf(def.prefix) === 0) {
-        a.id = def.id;
-        a.classList.add('btn-checkout');
-        a.href = appendParams(a.href);
-      }
-    });
-  });
-
-  /* Pricing cards */
-  var pricingIds = [
-    'btn-price-6-mobile', 'btn-price-3-mobile', 'btn-price-2-mobile',
-    'btn-price-6-desktop', 'btn-price-3-desktop', 'btn-price-2-desktop'
-  ];
-  document.querySelectorAll('a[href*="buygoods.com"]').forEach(function (a, i) {
-    if (pricingIds[i]) {
-      a.id = pricingIds[i];
-      a.classList.add('btn-checkout');
-      a.href = appendParams(a.href);
-    }
-  });
-
-  /* ── 3. REVIEW_ENGAGED (scroll >50% E tempo >30s — dispara 1× por visita) */
-  var scroll_done = false, time_done = false, engaged_fired = false;
-
-  function checkEngagement() {
-    if (engaged_fired || !scroll_done || !time_done) return;
-    engaged_fired = true;
-    gtag('event', 'review_engaged');
-  }
-
-  window.addEventListener('scroll', function () {
-    if (scroll_done) return;
-    if ((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight >= 0.5) {
-      scroll_done = true;
-      checkEngagement();
-    }
-  }, { passive: true });
-
-  setTimeout(function () { time_done = true; checkEngagement(); }, 30000);
-
-  /* ── 4. CLICK_TO_OFFICIAL ───────────────────────────────────────────────── */
-  document.addEventListener('click', function (e) {
-    var btn = e.target.closest('.btn-checkout');
-    if (!btn) return;
-    gtag('event', 'click_to_official', { button_location: btn.id });
-  });
-
-  /* ── 5. SUSPECTED_AFFILIATE (copy / right-click — dispara 1× por visita) ─ */
-  var spy_fired = false;
-  ['copy', 'contextmenu'].forEach(function (evt) {
-    document.addEventListener(evt, function () {
-      if (spy_fired) return;
-      spy_fired = true;
-      gtag('event', 'suspected_affiliate', { trigger: evt });
-    });
-  });
-
-});
-</script>
 
 </head><body><div data-elementor-type="wp-page" data-elementor-id="229" class="elementor elementor-229" data-elementor-post-type="page">
 				<div class="elementor-element elementor-element-3a2a0083 e-flex e-con-boxed e-con e-parent" data-id="3a2a0083" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
