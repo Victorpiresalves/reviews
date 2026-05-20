@@ -7,7 +7,13 @@
       "Bash(Out-String)",
       "Bash(grep -o \"\\\\\"text_color_\\\\\\\\\\(\\\\\\\\|\\\\\"button_text_color\\\\\\\\|\\\\\"background_color\\\\\\\\|button_text_color_hex\" index.html)",
       "Bash(dir \"c:\\\\Sistemas\\\\reviews\\\\memopezil\\\\assets\")",
-      "Bash(findstr \"MMP\")"
+      "Bash(findstr \"MMP\")",
+      "Bash(powershell -Command \"Select-String -Path 'c:\\\\Sistemas\\\\reviews\\\\memopezil\\\\index.html' -Pattern '@media' | Select-Object -First 20\")",
+      "Bash(powershell -Command \"Get-Content -Path 'c:\\\\Sistemas\\\\reviews\\\\memopezil\\\\index.html' -TotalCount 100 | Select-Object -First 20\")",
+      "Bash(powershell -Command \"\\(Get-Content 'c:\\\\Sistemas\\\\reviews\\\\memopezil\\\\index.html' | Select-String -Pattern 'viewport|charset|lang=' | Select-Object -First 10\\).Line\")",
+      "Bash(powershell -Command \"Select-String -Path 'c:\\\\Sistemas\\\\reviews\\\\memopezil\\\\index.html' -Pattern '@media.*\\\\\\(max-width' | Select-Object -First 15 -ExpandProperty Line\")",
+      "Bash(powershell -Command \"Select-String -Path 'c:\\\\Sistemas\\\\reviews\\\\memopezil\\\\index.html' -Pattern 'e-con-boxed|e-flex|e-parent' | Measure-Object -Line\")",
+      "Bash(python -c ' *)"
     ]
   }
 }
