@@ -13,7 +13,10 @@
       "Bash(powershell -Command \"\\(Get-Content 'c:\\\\Sistemas\\\\reviews\\\\memopezil\\\\index.html' | Select-String -Pattern 'viewport|charset|lang=' | Select-Object -First 10\\).Line\")",
       "Bash(powershell -Command \"Select-String -Path 'c:\\\\Sistemas\\\\reviews\\\\memopezil\\\\index.html' -Pattern '@media.*\\\\\\(max-width' | Select-Object -First 15 -ExpandProperty Line\")",
       "Bash(powershell -Command \"Select-String -Path 'c:\\\\Sistemas\\\\reviews\\\\memopezil\\\\index.html' -Pattern 'e-con-boxed|e-flex|e-parent' | Measure-Object -Line\")",
-      "Bash(python -c ' *)"
+      "Bash(python -c ' *)",
+      "Bash(powershell -Command \"Get-Content 'c:\\\\Sistemas\\\\reviews\\\\memopezil\\\\index.html' -TotalCount 100 | Select-Object -First 75 | Select-Object -Last 25\")",
+      "Bash(powershell -Command ' *)",
+      "Bash(py -c ' *)"
     ]
   }
 }
