@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"c:\\\\Sistemas\\\\reviews\\\\mmopezil\" -File)",
+      "Bash(Select-Object Name, Length)",
+      "Bash(Format-Table -AutoSize)",
+      "Bash(powershell -Command \"\\(Select-String -Path 'c:\\\\Sistemas\\\\reviews\\\\mmopezil\\\\index.html' -Pattern '<style' -Context 0, 5 | Select-Object -First 20\\).ToString\\(\\)\")",
+      "WebFetch(domain:healthsupplements.blog)",
+      "PowerShell($content = Get-Content \"c:\\\\Sistemas\\\\reviews\\\\mmopezil\\\\index.html\" -Raw; $index = $content.IndexOf\\('elementor-element-6d3ff419'\\); if \\($index -gt 0\\) { $start = [Math]::Max\\(0, $index - 500\\); $end = [Math]::Min\\($content.Length, $index + 1500\\); $content.Substring\\($start, $end - $start\\) } else { \"Not found\" })"
+    ]
+  }
+}
