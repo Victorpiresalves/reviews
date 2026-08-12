@@ -26,6 +26,12 @@ const CORRIGIDOS = {
     'Compression garments and prescribed medication do things a supplement does not do. The seller positions these drops as a daily routine alongside them, not as a replacement &mdash; and if a clinician has already advised something, keep doing it.',
   SHIPPING_PROCESS_1:
     'Shipping is free on the seller&rsquo;s checkout, and an expedited upgrade of $9.95 arrives already ticked below the pay button. We have not placed an order, so we cannot tell you how long delivery takes.',
+  // ⚠️ Estes dois campos existem porque o MOLDE do concorrente vive de urgência (SCARCITY_*,
+  // OFFER_EXPIRE_*). Não sabemos o estoque nem a validade da promoção do vendedor, e urgência
+  // inventada é "unacceptable business practices". O campo fica — o texto passa a dizer o que é
+  // verdade e ainda é útil: o preço por frasco depende do pacote e da página em que se cai.
+  SCARCITY_SHORT: 'Price per bottle depends on the package',
+  OFFER_EXPIRE_TITLE: 'Check the price on the page you land on',
 };
 
 const keys = await (await fetch(`https://api.supabase.com/v1/projects/${REF}/api-keys`, {

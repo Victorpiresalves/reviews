@@ -23,6 +23,12 @@ const REGRAS = [
   [/\b(miracle|breakthrough|revolutionary|game[- ]chang)/i, 'adjetivo de venda proibido'],
   [/\bSSL\b|\bcloned checkout\b|\bcounterfeit (bottles?|sellers?) (have|were|are) /i, 'fato não apurado'],
   [/\b(FDA[- ]approved|FDA approved)\b/i, 'alegação de aprovação regulatória'],
+  // ⚠️ ESCASSEZ FALSA. O molde do concorrente vive disso — ele tem campos SCARCITY_* e
+  // OFFER_EXPIRE_* na própria estrutura, então o modelo os preenche com urgência por construção.
+  // Nós não temos como saber o estoque do vendedor nem a validade da promoção dele, e urgência
+  // inventada cai em "unacceptable business practices" do Google. O campo CONTINUA na página; o
+  // que muda é o texto, que passa a dizer só o que é verificável.
+  [/(closing soon|limited stock|while stocks last|hurry|act fast|running out|only \d+ left|today only|last chance|selling out|limited time|seasonal discount)/i, 'escassez não verificável'],
 ];
 
 // Números que a página pode citar — vieram da apuração. Qualquer outro valor em dólar é invenção.
