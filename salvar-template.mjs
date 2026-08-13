@@ -18,6 +18,15 @@ const CHECKOUT = 'https://cc.linfaflow.com/dtcnew/checkout.php?hid=b2lkPW9mZl8wM
 
 let corpo = fs.readFileSync('.tmp/template-tokenizado.html', 'utf8');
 
+// ⚠️ O `auto-map-semantic` devolve o DOCUMENTO INTEIRO, não um fragmento — e embrulhar isso dentro
+// do nosso `<!doctype html><html><head>` produz DOIS `</head>` na página. O injetor da Cloudflare
+// troca `</head>` GLOBALMENTE, então o bloco de rastreio entra DUAS VEZES. Medido em 13/08: 3,00
+// PageViews por sessão na review contra 1,02 no blog — denominador inflado ~3x, justamente no braço
+// que seria comparado contra os advertoriais para decidir o que escalar. Foi assim que ela nasceu.
+corpo = corpo
+  .replace(/<html[^>]*>\s*<head>\s*<\/head>\s*<body[^>]*>/i, '')
+  .replace(/<\/body>\s*<\/html>\s*$/i, '');
+
 // ⚠️ O widget "Amazon-style Reviews" SAI do template, e é o único bloco que sai. Ele tem 14
 // placeholders — REVIEWER_NAME_1/2, REVIEW_DATE_1/2, VERIFIED_LABEL_1/2, REVIEW_BODY_1/2 — mais
 // duas estrelas SVG "1 out of 5 stars". Não existe texto que se possa gerar ali que não seja um
